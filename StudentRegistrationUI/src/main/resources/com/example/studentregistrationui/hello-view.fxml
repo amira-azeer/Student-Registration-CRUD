@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="363.0" prefWidth="675.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.studentregistrationui.Controller">
+   <top>
+      <Label prefHeight="54.0" prefWidth="312.0" text="STUDENT REGISTRATION FORM" textAlignment="CENTER" BorderPane.alignment="CENTER">
+         <font>
+            <Font size="22.0" />
+         </font>
+         <BorderPane.margin>
+            <Insets bottom="30.0" />
+         </BorderPane.margin>
+      </Label>
+   </top>
+   <left>
+      <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="142.0" BorderPane.alignment="TOP_CENTER">
+         <children>
+            <Label alignment="CENTER" contentDisplay="CENTER" text="Student Name">
+               <font>
+                  <Font name="Arial" size="12.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="20.0" top="40.0" />
+               </VBox.margin>
+            </Label>
+            <Label contentDisplay="CENTER" text="Mobile Number">
+               <padding>
+                  <Insets top="30.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets bottom="35.0" left="20.0" />
+               </VBox.margin>
+            </Label>
+            <Label contentDisplay="CENTER" text="Course Name">
+               <VBox.margin>
+                  <Insets left="20.0" />
+               </VBox.margin>
+            </Label>
+         </children>
+      </VBox>
+   </left>
+   <center>
+      <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="142.0" BorderPane.alignment="TOP_CENTER">
+         <BorderPane.margin>
+            <Insets right="40.0" />
+         </BorderPane.margin>
+         <children>
+
+            <TextField fx:id="name">
+               <VBox.margin>
+                  <Insets top="40.0" />
+               </VBox.margin>
+            </TextField>
+
+            <TextField fx:id="number">
+               <VBox.margin>
+                  <Insets bottom="20.0" top="20.0" />
+               </VBox.margin>
+            </TextField>
+
+            <TextField fx:id="course">
+               <VBox.margin>
+                  <Insets bottom="20.0" />
+               </VBox.margin>
+            </TextField>
+
+         </children>
+      </VBox>
+   </center>
+   <bottom>
+      <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="93.0" prefWidth="238.0" BorderPane.alignment="CENTER_LEFT">
+         <children>
+            <Button mnemonicParsing="false" text="Refresh" onAction="#updateTable">
+               <HBox.margin>
+                  <Insets left="10.0" top="10.0" />
+               </HBox.margin>
+            </Button>
+
+            <Button mnemonicParsing="false" onAction="#addStudent" prefHeight="26.0" prefWidth="64.0" text="Add">
+               <HBox.margin>
+                  <Insets left="10.0" top="10.0" />
+               </HBox.margin>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#deleteRowFromTable" prefHeight="26.0" prefWidth="63.0" text="Delete">
+               <HBox.margin>
+                  <Insets left="20.0" top="10.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+         <BorderPane.margin>
+            <Insets left="20.0" />
+         </BorderPane.margin>
+      </HBox>
+   </bottom>
+   <right>
+      <TableView fx:id="recordsTable" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="250.0" prefWidth="400.0">
+        <columns>
+           <TableColumn fx:id="col_ID" prefWidth="65.99999696016312" text="ID" />
+           <TableColumn fx:id="col_Name" onEditCommit="#changeStudentNameCellEvent" prefWidth="101.20001220703125" text="Name" />
+           <TableColumn fx:id="col_Number" onEditCommit="#changeStudentNumberCellEvent" prefWidth="92.20002746582031" text="Number" />
+           <TableColumn fx:id="col_Course" onEditCommit="#changeStudentCourseCellEvent" prefWidth="142.60003662109375" text="Course" />
+        </columns>
+         <BorderPane.margin>
+            <Insets right="10.0" />
+         </BorderPane.margin>
+      </TableView>
+   </right>
+</BorderPane>
